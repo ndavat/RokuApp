@@ -106,6 +106,28 @@ export default function RokuRemote() {
           onOkPress={() => handleButtonPress('OK')}
         />
 
+        {/* Volume Controls - Below Directional Pad */}
+        <View style={[commonStyles.buttonRow, { marginBottom: rowSpacing * 0.67 }]}>
+          <RemoteButton
+            iconName="volume-mute"
+            onPress={() => handleButtonPress('Mute')}
+            style={{ flex: 1, marginRight: 8 }}
+            iconSize={28}
+          />
+          <RemoteButton
+            iconName="volume-low"
+            onPress={() => handleButtonPress('Volume Down')}
+            style={{ flex: 1, marginHorizontal: 8 }}
+            iconSize={28}
+          />
+          <RemoteButton
+            iconName="volume-high"
+            onPress={() => handleButtonPress('Volume Up')}
+            style={{ flex: 1, marginLeft: 8 }}
+            iconSize={28}
+          />
+        </View>
+
         {/* Third Row - Replay, Options, Headphones */}
         <View style={[commonStyles.buttonRow, { marginBottom: rowSpacing * 0.67 }]}>
           <RemoteButton
@@ -150,28 +172,6 @@ export default function RokuRemote() {
           />
         </View>
 
-        {/* Fifth Row - Volume Controls */}
-        <View style={[commonStyles.buttonRow, { marginBottom: rowSpacing * 0.67 }]}>
-          <RemoteButton
-            iconName="volume-mute"
-            onPress={() => handleButtonPress('Mute')}
-            style={{ flex: 1, marginRight: 8 }}
-            iconSize={28}
-          />
-          <RemoteButton
-            iconName="volume-low"
-            onPress={() => handleButtonPress('Volume Down')}
-            style={{ flex: 1, marginHorizontal: 8 }}
-            iconSize={28}
-          />
-          <RemoteButton
-            iconName="volume-high"
-            onPress={() => handleButtonPress('Volume Up')}
-            style={{ flex: 1, marginLeft: 8 }}
-            iconSize={28}
-          />
-        </View>
-
         {/* Bottom Section */}
         <View style={commonStyles.bottomSection}>
           <Text style={[commonStyles.bottomText, { marginBottom: rowSpacing * 0.33 }]}>My Roku</Text>
@@ -197,10 +197,10 @@ export default function RokuRemote() {
               <Icon name="apps" size={20} />
             </TouchableOpacity>
             <TouchableOpacity 
-              style={[commonStyles.bottomButton, { backgroundColor: colors.text }]}
+              style={commonStyles.bottomButton}
               onPress={() => handleButtonPress('Add More')}
             >
-              <Icon name="add" size={20} style={{ color: colors.background }} />
+              <Icon name="add" size={20} />
             </TouchableOpacity>
           </View>
         </View>

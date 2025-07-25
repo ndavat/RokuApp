@@ -22,6 +22,7 @@ export const colors = {
   buttonDark: '#374151',   // Dark grey for secondary buttons
   buttonPurple: '#6B46C1', // Purple for primary buttons
   green: '#10B981',        // Green for power button
+  red: '#EF4444',          // Red for power button
 };
 
 export const buttonStyles = StyleSheet.create({
@@ -81,7 +82,7 @@ export const buttonStyles = StyleSheet.create({
     elevation: 4,
   },
   powerButton: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.red,
     borderRadius: 50,
     width: 50,
     height: 50,
@@ -199,7 +200,7 @@ export const commonStyles = StyleSheet.create({
     left: '50%',
     transform: [{ translateX: -40 }],
     width: 80,
-    height: 60,
+    height: 120,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
@@ -209,7 +210,7 @@ export const commonStyles = StyleSheet.create({
     left: '50%',
     transform: [{ translateX: -40 }],
     width: 80,
-    height: 60,
+    height: 120,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
@@ -218,7 +219,7 @@ export const commonStyles = StyleSheet.create({
     left: 0,
     top: '50%',
     transform: [{ translateY: -40 }],
-    width: 60,
+    width: 120,
     height: 80,
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
@@ -228,7 +229,7 @@ export const commonStyles = StyleSheet.create({
     right: 0,
     top: '50%',
     transform: [{ translateY: -40 }],
-    width: 60,
+    width: 120,
     height: 80,
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
