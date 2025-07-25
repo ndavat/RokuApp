@@ -1,40 +1,40 @@
 {
   "expo": {
-    "name": "Natively",
-    "slug": "Natively",
+    "name": "RokuApp",
+    "slug": "RokuApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/natively-dark.png",
+    "icon": "./assets/images/rokuapp-icon.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/natively-dark.png",
+      "image": "./assets/images/rokuapp-splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Natively",
+      "bundleIdentifier": "com.anonymous.RokuApp",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/natively-dark.png",
+        "foregroundImage": "./assets/images/rokuapp-adaptive-foreground.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.anonymous.Natively"
+      "package": "com.anonymous.rokuapp"
     },
     "web": {
-      "favicon": "./assets/images/final_quest_240x240.png",
+      "favicon": "./assets/images/rokuapp-icon.png",
       "bundler": "metro"
     },
     "plugins": [
       "expo-font",
       "expo-router"
     ],
-    "scheme": "natively",
+    "scheme": "rokuapp",
     "experiments": {
       "typedRoutes": true
     },

@@ -1,6 +1,6 @@
 {
-  "name": "Natively",
-  "short_name": "Natively",
+  "name": "RokuApp",
+  "short_name": "RokuApp",
   "icons": [
     {
       "src": "favicon.ico",

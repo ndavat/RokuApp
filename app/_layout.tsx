@@ -1,7 +1,7 @@
 import { Stack, useGlobalSearchParams } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Platform, SafeAreaView } from 'react-native';
+import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Platform } from 'react-native';
 import { commonStyles } from '../styles/commonStyles';
 import { useEffect, useState } from 'react';
 import { setupErrorLogging } from '../utils/errorLogger';
@@ -45,14 +45,23 @@ export default function RootLayout() {
     insetsToUse = deviceToEmulate ? simulatedInsets[deviceToEmulate as keyof typeof simulatedInsets] || actualInsets : actualInsets;
   }
 
+  // For web with emulation, use manual padding; otherwise use SafeAreaView edges
+  const isWebWithEmulation = Platform.OS === 'web' && (storedEmulate || emulate);
+  
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={[commonStyles.wrapper, {
-          paddingTop: insetsToUse.top,
-          paddingBottom: insetsToUse.bottom,
-          paddingLeft: insetsToUse.left,
-          paddingRight: insetsToUse.right,
-       }]}>
+      <SafeAreaView 
+        style={[
+          commonStyles.wrapper,
+          isWebWithEmulation ? {
+            paddingTop: insetsToUse.top,
+            paddingBottom: insetsToUse.bottom,
+            paddingLeft: insetsToUse.left,
+            paddingRight: insetsToUse.right,
+          } : {}
+        ]}
+        edges={isWebWithEmulation ? [] : ['top', 'bottom', 'left', 'right']}
+      >
         <StatusBar style="light" />
         <Stack
           screenOptions={{

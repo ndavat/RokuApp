@@ -1,4 +1,14 @@
-import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { StyleSheet, ViewStyle, TextStyle, Dimensions } from 'react-native';
+
+// Responsive spacing constant
+export const ROW_SPACING = 24;
+
+// Get responsive spacing based on screen height
+export const getResponsiveSpacing = () => {
+  const { height } = Dimensions.get('window');
+  const isShort = height < 700;
+  return isShort ? ROW_SPACING * 0.75 : ROW_SPACING; // 18 for short screens, 24 for normal
+};
 
 export const colors = {
   primary: '#6B46C1',      // Purple for main buttons
@@ -108,13 +118,11 @@ export const commonStyles = StyleSheet.create({
     fontWeight: '800',
     textAlign: 'center',
     color: colors.text,
-    marginBottom: 10
   },
   text: {
     fontSize: 16,
     fontWeight: '500',
     color: colors.text,
-    marginBottom: 8,
     lineHeight: 24,
     textAlign: 'center',
   },
@@ -148,13 +156,11 @@ export const commonStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
     paddingHorizontal: 20,
-    paddingVertical: 40,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 30,
   },
   roomSelector: {
     flexDirection: 'row',
@@ -173,13 +179,11 @@ export const commonStyles = StyleSheet.create({
   topButtonsRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20,
     paddingHorizontal: 10,
   },
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 16,
     paddingHorizontal: 10,
   },
   directionalPad: {
@@ -237,13 +241,11 @@ export const commonStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 8,
   },
   bottomSubtext: {
     color: colors.grey,
     fontSize: 14,
     textAlign: 'center',
-    marginBottom: 20,
   },
   bottomButtons: {
     flexDirection: 'row',
